@@ -1,0 +1,14 @@
+#div{
+    font-family: 'Pacifico', cursive;;
+}
+div textarea, button{
+    box-shadow: 1px 1px 1px 1px gray;
+    color: gray!important;
+}
+button:hover{
+    color:black!important;
+    /* background: tomato !important; */
+    opacity: .9 !important;
+    transform: scale(1.03);
+    transition: all .9s;
+}
