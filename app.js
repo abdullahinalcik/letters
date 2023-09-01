@@ -7,6 +7,8 @@ div.appendChild(p)
 const btnConvert=document.getElementById("convert")
 const btnClear=document.getElementById("clear")
 const btnWovels=document.getElementById("vowels")
+const btnCapitalize=document.getElementById("capitalize")
+// let array=p.input
  
 btnConvert.addEventListener("click",()=>{
     if(!input.value){
@@ -19,6 +21,7 @@ btnConvert.addEventListener("click",()=>{
     }
 })
 btnClear.addEventListener("click",()=>{
+  p.textContent=""
     input.value=""
     input.focus()
 })
@@ -47,12 +50,30 @@ vowelCounter = (input) => {
       alert("Please enter a centence");
     } else {
       vowelCounter(input);
+      p.textContent = `There are ${vowelCounter(input)} vowels in "${input.value}".`;
     }
   
-    p.textContent = `There are ${vowelCounter(input)} vowels in "${input.value}".`;
+    
   
  
   
     input.value = "";
     input.focus();
   });
+  btnCapitalize.addEventListener("click",()=>{
+    let array=input.value.split(" ")
+    
+    if(!input.value){
+        alert("Please enter sentences")
+    } else {
+        
+       for(let i in array){
+        array[i]=array[i].charAt(0).toUpperCase() + array[i].slice(1) + " ";
+       }
+       p.textContent=array.join("")
+       
+    input.value=""
+    input.focus()
+
+    }
+})
